@@ -1,10 +1,13 @@
-import Footer from "@/components/footer/footer";
+import NewsList from "@/components/News/news-list";
 
-const Home = () => {
+// Define the type for news items (adjust based on API response)
+
+const HackerNews = () => {
   return (
     <>
-      <h1>Home</h1>
+      <NewsList />
     </>
   );
 };
-export default Home;
+
+export default HackerNews;

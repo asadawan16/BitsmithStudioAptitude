@@ -4,12 +4,26 @@
 
 @layer components {
     .header {
-      @apply flex justify-center items-center bg-gray-800 text-white py-8 px-6;
+      @apply flex justify-start items-center bg-orange-600 text-white py-1 px-1 ;
     }
     .nav {
       @apply flex gap-4 items-center;
     }
     .nav-link {
-      @apply text-white text-base  py-2 px-3 bg-red-400 rounded font-normal font-montserrat hover:text-white hover:bg-black transition ease-in-out duration-150;
+      @apply text-base  font-montserrat text-black relative px-2;
+
+    }
+    .nav-link::after {
+      position: absolute;
+      top: 16%;
+      content: "";
+      border-right: 1px solid black; 
+      height: 12px;
+      padding-left: 8px;
+    }
+    .nav-link:last-child::after {
+      display: hidden;
+
     }
 }
+

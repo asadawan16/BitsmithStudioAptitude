@@ -11,6 +11,7 @@
 /* Apply global font */
 body {
   @apply font-roboto; /* Default font set to Roboto */
+ 
 }
 
 @layer base {
@@ -25,5 +26,12 @@ body {
   }
   h4 {
     @apply text-lg font-bold font-montserrat;
+  }
+}
+
+@layer components {
+
+  .app-container {
+    @apply  max-w-6xl mx-auto my-3 px-4 sm:px-6 lg:px-8;
   }
 }

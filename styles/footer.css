@@ -5,9 +5,24 @@
 @layer components {
 
     .footer {
-      @apply  flex justify-center items-center gap-11 bg-gray-500 text-white py-8 px-6 ;
+      @apply bg-gray-200   border-t-2 border-orange-500 py-5;
     }
     .footer-link {
-        @apply  text-base  font-shafarik;
+        @apply  text-xs   relative px-1 ;
+    }
+    .footer-span {
+      @apply text-sm text-gray-600 font-roboto  text-center block my-4;
+    }
+    .footer-link::after {
+      position: absolute;
+      top: 14%;
+      content: "";
+      border-right: 1px solid black; 
+      height: 10px;
+      padding-left: 8px;
+    }
+    .footer-link:last-child::after {
+      display: hidden;
+
     }
   }
