@@ -1,8 +1,19 @@
-import { fetchstory } from "@/utils/fetchdata";
-import Link from "next/link";
+"use client";
 
-export default async function News({ id }: { id: number }) {
-  const news = await fetchstory(id);
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { fetchstory } from "@/utils/fetchdata";
+
+export default function News({ id }: { id: number }) {
+  const [news, setNews] = useState<any>(null);
+
+  useEffect(() => {
+    const getNews = async () => {
+      const data = await fetchstory(id);
+      setNews(data);
+    };
+    getNews();
+  }, [id]);
 
   if (!news) {
     return <p className="text-gray-600">Loading...</p>;
@@ -17,7 +28,7 @@ export default async function News({ id }: { id: number }) {
       </div>
 
       <div>
-        <span className="text-xs ml-3 text-gray-600 px-10">
+        <span className="text-xs ml-3 text-gray-600 px-14">
           {news.score} points
         </span>
         <span className="text-xs ml-1 text-gray-600">
@@ -29,7 +40,10 @@ export default async function News({ id }: { id: number }) {
       </div>
 
       {news.url && (
-        <Link href={news.url} className="text-blue-500 hover:underline">
+        <Link
+          href={news.url}
+          className="text-gray-400 text-sm px-16 hover:text-orange-700 ease-in-out duration-150"
+        >
           Read More
         </Link>
       )}
