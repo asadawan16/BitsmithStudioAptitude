@@ -1,0 +1,29 @@
+/* Import Google Fonts (Place this at the very top) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shafarik+Script&display=swap');
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply global font */
+body {
+  @apply font-roboto; /* Default font set to Roboto */
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold font-montserrat;
+  }
+  h2 {
+    @apply text-2xl font-bold font-montserrat;
+  }
+  h3 {
+    @apply text-xl font-bold font-montserrat;
+  }
+  h4 {
+    @apply text-lg font-bold font-montserrat;
+  }
+}

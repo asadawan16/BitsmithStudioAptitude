@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    .footer {
+      @apply  flex justify-center items-center gap-11 bg-gray-500 text-white py-8 px-6 ;
+    }
+    .footer-link {
+        @apply  text-base  font-shafarik;
+    }
+  }
