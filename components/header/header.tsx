@@ -12,7 +12,9 @@ export default function Header() {
           height={20}
           className="border-2 border-white "
         />
-        <span className=" ml-1 block text-black  font-bold  ">Hacker News</span>
+        <span className=" ml-1 block text-black  font-bold font-serif  ">
+          Hacker News
+        </span>
       </Link>
       <nav>
         <ul className="nav">

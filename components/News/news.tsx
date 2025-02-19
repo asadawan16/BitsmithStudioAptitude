@@ -48,6 +48,9 @@ export default function News({ id, index }: NewsProps) {
                   (Date.now() / 1000 - news.time) / 3600
                 )} hours ago`}
           </span>
+          <span className=" ml-2 text-xs text-gray-600">
+            {news.score} comments
+          </span>
         </div>
       </Link>
     </li>

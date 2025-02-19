@@ -10,7 +10,7 @@
       @apply flex gap-4 items-center;
     }
     .nav-link {
-      @apply text-base  font-montserrat text-black relative px-2;
+      @apply text-base  font-serif text-black relative px-2;
 
     }
     .nav-link::after {
