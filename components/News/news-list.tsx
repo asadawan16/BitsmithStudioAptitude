@@ -36,7 +36,7 @@ export default function NewsList() {
       {/* Pagination Controls */}
 
       {/* Pagination Section */}
-      <div className="flex justify-center mt-4 space-x-2 pb-3">
+      <div className="flex justify-center flex-wrap gap-2 mt-4 space-x-2 pb-3">
         {Array.from({ length: totalPages }, (_, pageIndex) => (
           <button
             key={pageIndex + 1}

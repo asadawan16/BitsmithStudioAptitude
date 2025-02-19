@@ -26,15 +26,17 @@ export default function News({ id, index }: NewsProps) {
   const domain = news.url ? news.url.split("/")[2].replace("www.", "") : "";
 
   return (
-    <li className="flex flex-col py-2 gap-2" key={id}>
+    <li className="flex flex-col py-1 gap-1" key={id}>
       <Link href={`${news.url}`}>
         <div className="flex items-center">
           <span className="text-xs text-gray-600 mr-1">{index + 1}.</span>
           <span>
             <IoTriangle className="text-gray-600 size-2 mr-2" />
           </span>
-          <h2 className="text-black text-base font-serif ">{news.title}</h2>
-          <span className="text-gray-600 text-xs ml-3">( {domain} )</span>
+          <h2 className="text-black text-base font-serif max-w-screen-md">
+            {news.title}
+            <span className="text-gray-600 text-xs ml-3">({domain})</span>
+          </h2>
         </div>
 
         <div>
