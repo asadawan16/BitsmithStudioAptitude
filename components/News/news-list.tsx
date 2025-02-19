@@ -23,46 +23,33 @@ export default function NewsList() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const paginatedNews = news.slice(startIndex, endIndex);
+  const totalPages = Math.ceil(news.length / itemsPerPage);
 
   return (
-    <main className="bg-gray-200 px-2">
+    <main className="bg-gray-50 px-2">
       <ul>
         {paginatedNews.map((value, index) => (
-          <News key={index} id={value} />
+          <News key={index} index={startIndex + index} id={value} />
         ))}
       </ul>
 
       {/* Pagination Controls */}
-      <div className="flex justify-center mt-4 space-x-4 pb-4">
-        <button
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-          disabled={currentPage === 1}
-          className={`px-4 py-2 bg-blue-500 text-white rounded ${
-            currentPage === 1
-              ? "opacity-50 cursor-not-allowed"
-              : "hover:bg-blue-600"
-          }`}
-        >
-          Previous
-        </button>
 
-        <span className="px-4  py-2 bg-gray-300 rounded">
-          Page {currentPage}
-        </span>
-
-        <button
-          onClick={() =>
-            setCurrentPage((prev) => (endIndex < news.length ? prev + 1 : prev))
-          }
-          disabled={endIndex >= news.length}
-          className={`px-4 py-2 bg-blue-500 text-white rounded ${
-            endIndex >= news.length
-              ? "opacity-50 cursor-not-allowed"
-              : "hover:bg-blue-600"
-          }`}
-        >
-          Next
-        </button>
+      {/* Pagination Section */}
+      <div className="flex justify-center mt-4 space-x-2 pb-3">
+        {Array.from({ length: totalPages }, (_, pageIndex) => (
+          <button
+            key={pageIndex + 1}
+            onClick={() => setCurrentPage(pageIndex + 1)}
+            className={`px-3 py-2 rounded ${
+              currentPage === pageIndex + 1
+                ? "bg-orange-600 text-white font-bold"
+                : "bg-gray-300 text-black hover:bg-gray-400"
+            }`}
+          >
+            {pageIndex + 1}
+          </button>
+        ))}
       </div>
     </main>
   );

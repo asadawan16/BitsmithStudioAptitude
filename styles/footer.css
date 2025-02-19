@@ -5,7 +5,7 @@
 @layer components {
 
     .footer {
-      @apply bg-gray-200   border-t-2 border-orange-500 py-5;
+      @apply bg-gray-50   border-t-2 border-orange-500 py-5;
     }
     .footer-link {
         @apply  text-xs   relative px-1 ;
@@ -21,8 +21,8 @@
       height: 10px;
       padding-left: 8px;
     }
-    .footer-link:last-child::after {
-      display: hidden;
+    .footer-link::after:last-child {
+      display: none;
 
     }
   }
